@@ -1,0 +1,156 @@
+@use "../colors" as *;
+
+.sticky-nav {
+	background-color: $white;
+	box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 2px;
+}
+nav {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1000;
+	padding: 0 0.5em;
+
+	.nav-container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 2em 0;
+
+		.logo-box {
+			display: flex;
+			align-items: center;
+			gap: 0.5em;
+			width: 10vh;
+
+			.logo-icon {
+				width: 30%;
+			}
+			.logo-text {
+				font-weight: 700;
+				font-size: 1.6rem;
+				color: black;
+			}
+		}
+		.burger-btn {
+			width: 5vh;
+			z-index: 1000;
+		}
+		.mobile-menu {
+			position: fixed;
+			top: 0;
+			right: -100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			padding: 1em;
+			width: 90vw;
+			height: 100vh;
+			background-color: #f5f6fa;
+			box-shadow: 0 0 10px #85888c;
+			transition: all 0.3s ease;
+			.mobile-menu-item {
+				font-size: 2rem;
+				color: black;
+			}
+		}
+		.menu {
+			display: none;
+		}
+		.login-btn {
+			display: none;
+		}
+		.open-nav {
+			right: 0;
+		}
+	}
+}
+
+@media (min-width: 1200px) {
+	nav {
+		.nav-container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 2em 0;
+
+			.logo-box {
+				display: flex;
+				align-items: center;
+				gap: 0.5em;
+				width: 10vh;
+
+				.logo-icon {
+					width: 30%;
+				}
+				.logo-text {
+					font-weight: 700;
+					font-size: 1.6rem;
+					color: black;
+				}
+			}
+			.menu {
+				display: flex;
+				align-items: center;
+				gap: 5em;
+
+				.menu-item {
+					position: relative;
+					font-size: 1.6rem;
+					font-weight: 700;
+					color: black;
+					transition: all 0.3s ease;
+					cursor: pointer;
+				}
+				.menu-item::before {
+					position: absolute;
+					left: 50%;
+					transform: translateX(-50%);
+					bottom: -10%;
+					width: 0;
+					height: 2px;
+					background-color: $green;
+					content: "";
+				}
+				.menu-item:hover {
+					color: $green;
+				}
+				.menu-item:hover::before {
+					animation: navHover 0.3s forwards;
+				}
+			}
+			.burger-btn {
+				display: none;
+			}
+			.mobile-menu {
+				display: none;
+			}
+
+			.login-btn {
+				display: block;
+				padding: 0.5em 1em;
+				font-weight: 700;
+				font-size: 1.6rem;
+				border-radius: 300px;
+				border: transparent;
+				background-color: black;
+				color: $white;
+				transition: all 0.3s ease;
+				cursor: pointer;
+			}
+			.login-btn:hover {
+				background-color: $green;
+				scale: 1.1;
+			}
+		}
+	}
+}
+@keyframes navHover {
+	from {
+		width: 0%;
+	}
+
+	to {
+		width: 100%;
+	}
+}

@@ -1,0 +1,14 @@
+@use "../colors" as *;
+.brands {
+	margin-top: 5em;
+	padding: 4em;
+	background-color: $gray;
+	.brands-container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.brand-icon {
+		width: 10vh;
+	}
+}
