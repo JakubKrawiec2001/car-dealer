@@ -37,21 +37,26 @@ nav {
 			z-index: 1000;
 		}
 		.mobile-menu {
+			display: flex;
+			flex-direction: column;
 			position: fixed;
 			top: 0;
 			right: -100%;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			padding: 1em;
 			width: 90vw;
 			height: 100vh;
 			background-color: #f5f6fa;
 			box-shadow: 0 0 10px #85888c;
 			transition: all 0.3s ease;
+
 			.mobile-menu-item {
+				padding: 1em;
 				font-size: 2rem;
+				border-bottom: 1px solid $green;
 				color: black;
+			}
+			.mobile-menu-heading {
+				background-color: $green;
+				color: $white;
 			}
 		}
 		.menu {
@@ -66,29 +71,34 @@ nav {
 	}
 }
 
+@media (min-width: 768px) {
+	 nav {
+		.nav-container {
+			.mobile-menu {
+				.mobile-menu-item {
+					font-size: 2.5rem;
+				}
+			}
+		}
+	 }
+}
+@media (min-width: 1024px) {
+	 nav {
+		.nav-container {
+			.mobile-menu {
+				.mobile-menu-item {
+					font-size: 3rem;
+				}
+			}
+		}
+	 }
+}
+
 @media (min-width: 1200px) {
 	nav {
 		.nav-container {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			padding: 2em 0;
+		
 
-			.logo-box {
-				display: flex;
-				align-items: center;
-				gap: 0.5em;
-				width: 10vh;
-
-				.logo-icon {
-					width: 30%;
-				}
-				.logo-text {
-					font-weight: 700;
-					font-size: 1.6rem;
-					color: black;
-				}
-			}
 			.menu {
 				display: flex;
 				align-items: center;

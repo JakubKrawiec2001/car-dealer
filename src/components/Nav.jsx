@@ -63,19 +63,32 @@ const Nav = () => {
 				)}
 
 				<div className={!open ? "mobile-menu" : "mobile-menu open-nav"}>
-					<Link href="" className="mobile-menu-item">
+					<p className="mobile-menu-item mobile-menu-heading">Menu</p>
+					<Link
+						href=""
+						className="mobile-menu-item"
+						onClick={() => setOpen(false)}>
 						Start
 					</Link>
-					<Link href="" className="mobile-menu-item">
+					<Link
+						href=""
+						className="mobile-menu-item"
+						onClick={() => setOpen(false)}>
 						Flota
 					</Link>
-					<Link href="" className="mobile-menu-item">
+					<Link
+						href=""
+						className="mobile-menu-item"
+						onClick={() => setOpen(false)}>
 						O nas
 					</Link>
-					<Link href="" className="mobile-menu-item">
+					<Link
+						href=""
+						className="mobile-menu-item"
+						onClick={() => setOpen(false)}>
 						Kontakt
 					</Link>
-					<Link to="/login" className="mobile-menu-login-btn">
+					<Link to="/login" className="mobile-menu-item mobile-menu-login-btn">
 						Zaloguj się
 					</Link>
 				</div>
