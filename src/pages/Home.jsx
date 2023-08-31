@@ -5,7 +5,7 @@ import Brands from "../components/Brands";
 const Home = () => {
 	return (
 		<>
-			{/* <Header></Header> */}
+			<Header></Header>
 			{/* <Brands></Brands> */}
 		</>
 	);

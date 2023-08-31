@@ -30,7 +30,7 @@ const Header = () => {
 						alt="location icon"
 						className="header-contact-icon"
 					/>
-					<p className="header-contact-text">Wieliczka, ul. Dobra 86, 92-002</p>
+					<p className="header-contact-text">Wieliczka, ul. Dobra 86</p>
 
 					<img src={phone} alt="phone icon" className="header-contact-icon" />
 					<p className="header-contact-text">123-223-293</p>
