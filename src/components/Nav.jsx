@@ -4,8 +4,10 @@ import { Link } from "react-router-dom";
 import logo from "../assets/icons/logo.svg";
 import burgerIcon from "../assets/icons/menu.svg";
 import closeIcon from "../assets/icons/close.svg";
+import { auth } from "../config/firebase";
+import { signOut } from "firebase/auth";
 
-const Nav = () => {
+const Nav = ({ currentUser, setCurrentUser }) => {
 	const [stickyNav, setStickyNav] = useState("");
 	const [open, setOpen] = useState(false);
 
@@ -22,6 +24,16 @@ const Nav = () => {
 		!open ? setOpen(true) : setOpen(false);
 	};
 
+	const logOut = () => {
+		signOut(auth)
+			.then(() => {
+				setCurrentUser("");
+			})
+			.catch((error) => {
+				console.error(error);
+			});
+	};
+
 	useEffect(() => {
 		window.addEventListener("scroll", stickyNavbar);
 	}, []);
@@ -33,16 +45,16 @@ const Nav = () => {
 					<p className="logo-text">LOGO</p>
 				</Link>
 				<div className="menu">
-					<Link href="" className="menu-item">
+					<Link to="/" className="menu-item">
 						Start
 					</Link>
-					<Link href="" className="menu-item">
+					<Link to="/" className="menu-item">
 						Flota
 					</Link>
-					<Link href="" className="menu-item">
+					<Link to="/" className="menu-item">
 						O nas
 					</Link>
-					<Link href="" className="menu-item">
+					<Link to="/" className="menu-item">
 						Kontakt
 					</Link>
 				</div>
@@ -65,25 +77,25 @@ const Nav = () => {
 				<div className={!open ? "mobile-menu" : "mobile-menu open-nav"}>
 					<p className="mobile-menu-item mobile-menu-heading">Menu</p>
 					<Link
-						href=""
+						to="/"
 						className="mobile-menu-item"
 						onClick={() => setOpen(false)}>
 						Start
 					</Link>
 					<Link
-						href=""
+						to="/"
 						className="mobile-menu-item"
 						onClick={() => setOpen(false)}>
 						Flota
 					</Link>
 					<Link
-						href=""
+						to="/"
 						className="mobile-menu-item"
 						onClick={() => setOpen(false)}>
 						O nas
 					</Link>
 					<Link
-						href=""
+						to="/"
 						className="mobile-menu-item"
 						onClick={() => setOpen(false)}>
 						Kontakt
@@ -92,10 +104,13 @@ const Nav = () => {
 						Zaloguj się
 					</Link>
 				</div>
-
-				<Link to="/login" className="login-btn">
-					Zaloguj się
-				</Link>
+				{currentUser ? (
+					<button onClick={() => logOut()}>Wyloguj</button>
+				) : (
+					<Link to="/login" className="login-btn">
+						Zaloguj się
+					</Link>
+				)}
 			</div>
 		</nav>
 	);

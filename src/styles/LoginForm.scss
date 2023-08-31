@@ -1,0 +1,39 @@
+@use "../colors" as *;
+.login-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 50vh;
+	aspect-ratio: 1 / 1;
+	background-color: $white;
+	.login-input {
+		width: 60%;
+		font-size: 2rem;
+		border-radius: 300px;
+	}
+    .login-error {
+        font-weight: bold;
+        font-size: 1.4rem;
+        color: red;
+    }
+	.login-google {
+		display: flex;
+		align-items: center;
+		gap: 0.5em;
+		.google-icon {
+			width: 2vh;
+		}
+	}
+	.login-text {
+		font-size: 1.6rem;
+		.login-text-span {
+			font-weight: bold;
+			cursor: pointer;
+			transition: all 0.3s ease;
+		}
+		.login-text-span:hover {
+			color: $green;
+		}
+	}
+}

@@ -1,14 +1,54 @@
 @use "../colors" as *;
 .brands {
 	margin-top: 5em;
-	padding: 4em;
+	padding: 2em;
 	background-color: $gray;
 	.brands-container {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-	}
-	.brand-icon {
-		width: 10vh;
+		gap: 1em;
+		.brand-icon {
+			width: 5vh;
+		}
 	}
 }
+@media (min-width: 768px) {
+	.brands {
+		.brands-container {
+			
+			.brand-icon {
+				width: 6.5vh;
+			}
+		}
+	}
+}
+
+@media (min-width: 1200px) {
+	.brands {
+		margin-top: 5em;
+		padding: 3em;
+
+		.brands-container {
+			gap: 0;
+			.brand-icon {
+				width: 10vh;
+			}
+		}
+	}
+}
+@media (min-width: 2000px) {
+	.brands {
+		
+
+		.brands-container {
+		
+			.brand-icon {
+				width: 8vh;
+			}
+		}
+	}
+}
+
+
+
