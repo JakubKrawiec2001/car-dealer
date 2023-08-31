@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../styles/Nav.scss";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/icons/logo.svg";
 import burgerIcon from "../assets/icons/menu.svg";
 import closeIcon from "../assets/icons/close.svg";
@@ -10,6 +10,7 @@ import { signOut } from "firebase/auth";
 const Nav = ({ currentUser, setCurrentUser }) => {
 	const [stickyNav, setStickyNav] = useState("");
 	const [open, setOpen] = useState(false);
+	const navigate = useNavigate();
 
 	const stickyNavbar = () => {
 		let windowHeight = window.scrollY;
@@ -27,7 +28,7 @@ const Nav = ({ currentUser, setCurrentUser }) => {
 	const logOut = () => {
 		signOut(auth)
 			.then(() => {
-				setCurrentUser("");
+				navigate("/login");
 			})
 			.catch((error) => {
 				console.error(error);

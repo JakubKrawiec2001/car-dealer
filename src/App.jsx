@@ -1,6 +1,6 @@
 import "./App.scss";
 import Home from "./pages/Home";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate, Navigate } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import Nav from "./components/Nav";
 import { auth, googleProvider } from "./config/firebase";
@@ -9,13 +9,13 @@ import {
 	signInWithPopup,
 	signInWithEmailAndPassword,
 } from "firebase/auth";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [error, setError] = useState(false);
-	const [currentUser, setCurrentUser] = useState("");
+	const [currentUser, setCurrentUser] = useState(null);
 
 	const navigate = useNavigate();
 
@@ -26,14 +26,15 @@ function App() {
 		} catch (err) {
 			console.error(err);
 		}
+		navigate("/");
 	};
 	const signIn = (e) => {
 		e.preventDefault();
 		signInWithEmailAndPassword(auth, email, password)
 			.then((userCredential) => {
-				const user = userCredential.user;
+				// const user = userCredential.user;
 
-				setCurrentUser(user?.auth?.currentUser?.email);
+				// setCurrentUser(user?.auth?.currentUser?.email);
 
 				navigate("/");
 			})
@@ -48,6 +49,15 @@ function App() {
 			console.error(err);
 		}
 	};
+	useEffect(() => {
+		auth.onAuthStateChanged((authUser) => {
+			if (authUser) {
+				setCurrentUser(authUser);
+			} else {
+				setCurrentUser(null);
+			}
+		});
+	}, []);
 	return (
 		<div className="App">
 			<Nav currentUser={currentUser} setCurrentUser={setCurrentUser}></Nav>
@@ -56,13 +66,17 @@ function App() {
 				<Route
 					path="/login"
 					element={
-						<LoginPage
-							signUp={signUp}
-							signIn={signIn}
-							signInWithGoogle={signInWithGoogle}
-							setEmail={setEmail}
-							setPassword={setPassword}
-							error={error}></LoginPage>
+						currentUser ? (
+							<Navigate to="/"></Navigate>
+						) : (
+							<LoginPage
+								signUp={signUp}
+								signIn={signIn}
+								signInWithGoogle={signInWithGoogle}
+								setEmail={setEmail}
+								setPassword={setPassword}
+								error={error}></LoginPage>
+						)
 					}></Route>
 			</Routes>
 		</div>
