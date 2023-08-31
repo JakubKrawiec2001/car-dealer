@@ -4,7 +4,7 @@ import { getStorage } from "firebase/storage";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
 const firebaseConfig = {
-	apiKey: "AIzaSyAhjN0jJaC_go7IHSUF8HLFNaOJmOZb0WI",
+	apiKey: process.env.REACT_APP_FIREBASE_KEY,
 	authDomain: "react-cars-86570.firebaseapp.com",
 	projectId: "react-cars-86570",
 	storageBucket: "react-cars-86570.appspot.com",
