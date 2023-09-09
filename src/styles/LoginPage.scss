@@ -8,7 +8,20 @@
 	left: 0;
 	right: 0;
 	width: 100%;
-	height: 90vh;
+	height: 100vh;
 	background-color: #99bfaf;
 	z-index: 1000;
+	.login-page-close-btn {
+		position: absolute;
+		top: 4%;
+		left: 2%;
+		font-size: 4rem;
+		color: $white;
+		transition: all 0.3s ease;
+		cursor: pointer;
+	}
+	.login-page-close-btn:hover {
+		color: black;
+		scale: 1.1;
+	}
 }

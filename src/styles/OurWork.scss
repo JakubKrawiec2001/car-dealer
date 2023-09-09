@@ -1,0 +1,39 @@
+@use "../colors" as *;
+
+.ow-container {
+	
+
+	.ow-body {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		margin: 6em 0;
+
+		.ow-item {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			gap: 1em;
+			padding: 2em;
+			border-radius: 4px;
+			border: 2px solid $green;
+			width: 25%;
+
+			.ow-img {
+				width: 30%;
+			}
+
+			.ow-text {
+				font-size: 2rem;
+				color: #777;
+			}
+		}
+
+		.ow-item:nth-child(2) {
+			.ow-img {
+				border-radius: 100%;
+			}
+		}
+	}
+}

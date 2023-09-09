@@ -8,9 +8,19 @@
 		right: 0;
 		width: 30vw;
 		height: 100%;
-		background-color: rgba($green, 0.4);
-		border-bottom-left-radius: 600px;
+		background-color: #99bfaf;
+		border-bottom-left-radius: 1000px;
+		border-top-left-radius: 1000px;
 		z-index: -1;
+	}
+	.header-circle {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 30vh;
+		aspect-ratio: 1 / 1;
+		border-bottom-right-radius: 100%;
+		background-color: #99bfaf;
 	}
 	.hero-car {
 		position: absolute;
@@ -50,17 +60,19 @@
 			text-transform: uppercase;
 			color: black;
 			width: 100%;
+			line-height: 1.1;
 			z-index: 2;
 		}
 		.hero-text {
 			width: 80%;
 			font-size: 1rem;
+			color: #777;
 		}
 		.hero-btn {
 			padding: 0.5em 1em;
 			font-size: 1.2rem;
 			font-weight: bold;
-			border-radius: 300px;
+			border-radius: 4px;
 			background-color: $green;
 			color: $white;
 			transition: all 0.3s ease;
@@ -81,9 +93,8 @@
 			padding: 1em 2em;
 			width: 90%;
 			border-radius: 10px;
+			border: 2px solid $green;
 			background-color: $white;
-			box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 6px,
-				rgba(0, 0, 0, 0.23) 0px 3px 6px;
 
 			.header-contact-icon {
 				width: 5%;
@@ -170,19 +181,18 @@
 		}
 	}
 }
-
 @media (min-width: 1200px) {
 	.header {
 		height: 100vh;
 		.hero-car {
-			right: 5%;
+			right: 0;
 			top: 50%;
-			width: 80vh;
+			width: 60vh;
 		}
 		.header-container {
 			justify-content: center;
-			gap: 3em;
-			padding: 0;
+			gap: 2em;
+			padding-left: 0.5em;
 			height: 90%;
 
 			.crown-box {
@@ -202,13 +212,35 @@
 			}
 
 			.header-contact-box {
-				bottom: 5%;
+				bottom: 10%;
 				left: 0;
 				transform: translateX(0);
-
 				gap: 1em;
-				padding: 2em 3em;
-				width: 70vh;
+				width: 60vh;
+			}
+		}
+	}
+}
+@media (min-width: 1400px) {
+	.header {
+		.hero-car {
+			width: 70vh;
+		}
+		.header-container {
+			padding: 0;
+		}
+	}
+}
+
+@media (min-width: 1920px) {
+	.header {
+		.hero-car {
+			right: 5%;
+			width: 80vh;
+		}
+		.header-container {
+			.hero-heading {
+				font-size: 6rem;
 			}
 		}
 	}
@@ -217,7 +249,7 @@
 	.header {
 		.header-container {
 			height: 80%;
-			.hero-heading  {
+			.hero-heading {
 				width: 70%;
 				font-size: 6rem;
 			}

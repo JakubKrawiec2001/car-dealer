@@ -2,7 +2,7 @@
 .brands {
 	margin-top: 5em;
 	padding: 2em;
-	background-color: $gray;
+	
 	.brands-container {
 		display: flex;
 		justify-content: space-between;
@@ -10,6 +10,7 @@
 		gap: 1em;
 		.brand-icon {
 			width: 5vh;
+			opacity: 0.2;
 		}
 	}
 }
@@ -32,7 +33,7 @@
 		.brands-container {
 			gap: 0;
 			.brand-icon {
-				width: 10vh;
+				width: 8vh;
 			}
 		}
 	}
@@ -44,7 +45,7 @@
 		.brands-container {
 		
 			.brand-icon {
-				width: 8vh;
+				width: 7vh;
 			}
 		}
 	}

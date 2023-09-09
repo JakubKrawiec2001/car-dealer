@@ -17,21 +17,17 @@ nav {
 		align-items: center;
 		padding: 2em 0;
 
-		.logo-box {
-			display: flex;
-			align-items: center;
-			gap: 0.5em;
-			width: 10vh;
-
-			.logo-icon {
-				width: 30%;
-			}
-			.logo-text {
-				font-weight: 700;
-				font-size: 1.6rem;
-				color: black;
-			}
+		.logo-text {
+			font-weight: 700;
+			font-size: 1.6rem;
+			color: black;
+			cursor: pointer;
+			transition: all 0.3s ease;
 		}
+		.logo-text:hover {
+			color: $green;
+		}
+
 		.burger-btn {
 			width: 5vh;
 			z-index: 1000;
@@ -59,7 +55,16 @@ nav {
 				color: $white;
 			}
 		}
+		.user-img {
+			display: none;
+		}
+		.user-default-image {
+			display: none;
+		}
 		.menu {
+			display: none;
+		}
+		.account-menu {
 			display: none;
 		}
 		.login-btn {
@@ -72,7 +77,7 @@ nav {
 }
 
 @media (min-width: 768px) {
-	 nav {
+	nav {
 		.nav-container {
 			.mobile-menu {
 				.mobile-menu-item {
@@ -80,10 +85,10 @@ nav {
 				}
 			}
 		}
-	 }
+	}
 }
 @media (min-width: 1024px) {
-	 nav {
+	nav {
 		.nav-container {
 			.mobile-menu {
 				.mobile-menu-item {
@@ -91,27 +96,29 @@ nav {
 				}
 			}
 		}
-	 }
+	}
 }
 
 @media (min-width: 1200px) {
 	nav {
+		background-color: $white;
 		.nav-container {
-		
+			position: relative;
 
 			.menu {
 				display: flex;
 				align-items: center;
-				gap: 5em;
+				gap: 2em;
 
 				.menu-item {
 					position: relative;
 					font-size: 1.6rem;
-					font-weight: 700;
+					font-weight: 400;
 					color: black;
 					transition: all 0.3s ease;
 					cursor: pointer;
 				}
+
 				.menu-item::before {
 					position: absolute;
 					left: 50%;
@@ -128,6 +135,14 @@ nav {
 				.menu-item:hover::before {
 					animation: navHover 0.3s forwards;
 				}
+				.nav-icon {
+					font-size: 2.6rem;
+					cursor: pointer;
+					transition: all 0.3s ease;
+				}
+				.nav-icon:hover {
+					color: $green;
+				}
 			}
 			.burger-btn {
 				display: none;
@@ -141,7 +156,7 @@ nav {
 				padding: 0.5em 1em;
 				font-weight: 700;
 				font-size: 1.6rem;
-				border-radius: 300px;
+				border-radius: 4px;
 				border: transparent;
 				background-color: black;
 				color: $white;
@@ -151,6 +166,44 @@ nav {
 			.login-btn:hover {
 				background-color: $green;
 				scale: 1.1;
+			}
+			.account-menu {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 2em;
+				position: absolute;
+				right: 0;
+				bottom: -235%;
+				padding: 2em;
+				min-width: 20vh;
+				height: 17vh;
+				background-color: $white;
+				border: 1px solid black;
+				border-top: none;
+				border-bottom-right-radius: 10px;
+				border-bottom-left-radius: 10px;
+				.user-name {
+					padding-bottom: 0.5em;
+					font-size: 1.6rem;
+					font-weight: bold;
+					border-bottom: 1px solid #a2a1a1;
+				}
+				.add-new-publication {
+					display: flex;
+					align-items: center;
+					font-size: 1.4rem;
+					background: none;
+					border: transparent;
+					transition: all 0.3s ease;
+					cursor: pointer;
+					.add-icon {
+						font-size: 2rem;
+					}
+				}
+				.add-new-publication:hover {
+					color: $green;
+				}
 			}
 		}
 	}

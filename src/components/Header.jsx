@@ -10,6 +10,7 @@ const Header = () => {
 	return (
 		<div className="header">
 			<div className="header-r"></div>
+			<div className="header-circle"></div>
 			<img src={heroCar} alt="car" className="hero-car" />
 			<div className="wrapper header-container">
 				<span className="crown-box">

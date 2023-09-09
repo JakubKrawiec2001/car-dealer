@@ -1,16 +1,20 @@
 import React, { useState } from "react";
 import "../styles/LoginForm.scss";
 import google from "../assets/icons/google.png";
+import { signInWithPopup } from "firebase/auth";
+import { auth, googleProvider } from "../config/firebase";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const LoginForm = ({
 	signUp,
 	signIn,
-	signInWithGoogle,
 	setEmail,
 	setPassword,
-	error,
+	setReapetPassword,
 }) => {
 	const [login, setLogin] = useState(false);
+	const navigate = useNavigate();
 
 	const handleChangeLogin = () => {
 		if (login) {
@@ -19,26 +23,58 @@ const LoginForm = ({
 			setLogin(true);
 		}
 	};
+	const signInWithGoogle = async (e) => {
+		e.preventDefault();
+		try {
+			await signInWithPopup(auth, googleProvider);
+		} catch (err) {
+			console.error(err);
+		}
+		navigate("/");
+		return toast.success("Zalogowano");
+	};
 
 	return (
 		<form className="login-container">
-			{!login ? <h2>Zaloguj sie</h2> : <h2>Zarejestruj się</h2>}
-
-			<input
-				type="email"
-				placeholder="Email"
-				className="login-input"
-				onChange={(e) => setEmail(e.target.value)}
-			/>
-			<input
-				type="password"
-				placeholder="Hasło"
-				className="login-input"
-				onChange={(e) => setPassword(e.target.value)}
-			/>
-			{error ? (
-				<span className="login-error">Błędny login bądź hasło</span>
-			) : null}
+			{!login ? (
+				<>
+					<h2 className="login-heading">Logowanie</h2>
+					<input
+						type="email"
+						placeholder="Email"
+						className="login-input"
+						onChange={(e) => setEmail(e.target.value)}
+					/>
+					<input
+						type="password"
+						placeholder="Hasło"
+						className="login-input"
+						onChange={(e) => setPassword(e.target.value)}
+					/>
+				</>
+			) : (
+				<>
+					<h2 className="login-heading">Rejestracja</h2>
+					<input
+						type="email"
+						placeholder="Email"
+						className="login-input"
+						onChange={(e) => setEmail(e.target.value)}
+					/>
+					<input
+						type="password"
+						placeholder="Hasło"
+						className="login-input"
+						onChange={(e) => setPassword(e.target.value)}
+					/>
+					<input
+						type="password"
+						placeholder="Powtórz hasło"
+						className="login-input"
+						onChange={(e) => setReapetPassword(e.target.value)}
+					/>
+				</>
+			)}
 
 			{!login ? (
 				<button className="login-btn" onClick={signIn}>
@@ -50,12 +86,12 @@ const LoginForm = ({
 				</button>
 			)}
 
-			<span>
+			<div className="login-choice-box">
 				<div className="login-line"></div>
-				<p>lub</p>
+				<p className="login-text">lub</p>
 				<div className="login-line"></div>
-			</span>
-			<button className="login-google" onClick={signInWithGoogle}>
+			</div>
+			<button className="login-google" onClick={(e) => signInWithGoogle(e)}>
 				<img src={google} alt="google icon" className="google-icon" />
 				Zaloguj się z Google
 			</button>

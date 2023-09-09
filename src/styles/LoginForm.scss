@@ -4,36 +4,122 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	width: 50vh;
-	aspect-ratio: 1 / 1;
+	gap: 2em;
+	padding: 2em 1em;
+	width: 90%;
+	min-height: 60vh;
+	border-radius: 10px;
 	background-color: $white;
-	.login-input {
-		width: 60%;
+	box-shadow: 0 0 10px #85888c;
+	.login-heading {
 		font-size: 2rem;
+	}
+	.login-input {
+		padding: 0.5em 1em;
+		width: 100%;
+		font-size: 1.6rem;
 		border-radius: 300px;
 	}
-    .login-error {
-        font-weight: bold;
-        font-size: 1.4rem;
-        color: red;
-    }
+
+	.login-btn {
+		padding: 0.5em 1em;
+		color: $white;
+		font-weight: bold;
+		font-size: 1.6rem;
+		border-radius: 300px;
+		border: transparent;
+		background-color: $green;
+	}
+
+	.login-choice-box {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 1em;
+		width: 100%;
+
+		.login-line {
+			width: 30%;
+			height: 1px;
+			background-color: black;
+			opacity: 0.2;
+		}
+	}
 	.login-google {
 		display: flex;
 		align-items: center;
 		gap: 0.5em;
+		padding: 0.5em 1em;
+		font-size: 1.6rem;
+		background-color: $gray;
+		border: 1px solid $green;
+
 		.google-icon {
 			width: 2vh;
 		}
 	}
+
 	.login-text {
-		font-size: 1.6rem;
+		text-align: center;
+		font-size: 1.2rem;
 		.login-text-span {
+			margin-left: 0.2em;
 			font-weight: bold;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.login-container {
+		width: 50vh;
+		.login-input {
+			width: 60%;
+		}
+	}
+}
+
+@media (min-width: 1200px) {
+	.login-container {
+		width: 60vh;
+
+		.login-heading {
+			font-size: 3rem;
+		}
+		.login-input {
+			width: 60%;
+			font-size: 2rem;
+		}
+
+		.login-btn {
+			font-size: 2rem;
 			cursor: pointer;
 			transition: all 0.3s ease;
 		}
-		.login-text-span:hover {
-			color: $green;
+
+		.login-btn:hover {
+			background-color: black;
+			scale: 1.1;
+		}
+
+		.login-google {
+			font-size: 2rem;
+			cursor: pointer;
+			transition: all 0.3s ease;
+		}
+		.login-google:hover {
+			background-color: #ddd;
+			scale: 1.1;
+		}
+		.login-text {
+			font-size: 1.6rem;
+			.login-text-span {
+				cursor: pointer;
+				transition: all 0.3s ease;
+			}
+
+			.login-text-span:hover {
+				color: $green;
+			}
 		}
 	}
 }
