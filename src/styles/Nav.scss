@@ -174,15 +174,14 @@ nav {
 				gap: 2em;
 				position: absolute;
 				right: 0;
-				bottom: -235%;
+				bottom: -230%;
 				padding: 2em;
 				min-width: 20vh;
 				height: 17vh;
 				background-color: $white;
-				border: 1px solid black;
-				border-top: none;
 				border-bottom-right-radius: 10px;
 				border-bottom-left-radius: 10px;
+
 				.user-name {
 					padding-bottom: 0.5em;
 					font-size: 1.6rem;
@@ -204,6 +203,17 @@ nav {
 				.add-new-publication:hover {
 					color: $green;
 				}
+			}
+		}
+	}
+}
+
+@media (min-width: 2000px) {
+	nav {
+		.nav-container {
+			.account-menu {
+				height: 15vh;
+				bottom: -300%;
 			}
 		}
 	}

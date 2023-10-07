@@ -10,7 +10,7 @@ const FeaturedOffers = ({ cars }) => {
 				<span>Wyróżnione</span> oferty
 			</h2>
 			<div className="fo-item-box">
-				{cars.slice(0, 3).map((car) => {
+				{cars.slice(0, 4).map((car) => {
 					return (
 						<Link to={`/details/${car.id}`} key={car.id} className="fo-item">
 							<img src={car.imgUrl} alt="" className="fo-img" />

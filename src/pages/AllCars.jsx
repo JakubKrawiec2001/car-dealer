@@ -1,11 +1,11 @@
 import React from "react";
 import Footer from "../components/Footer";
-import Cars from "../components/Cars";
+import Car from "../components/Car";
 
-const AllCars = ({ cars }) => {
+const AllCars = ({ cars, currentUser }) => {
 	return (
 		<div className="page">
-			<Cars cars={cars}></Cars>
+			<Car cars={cars} currentUser={currentUser}></Car>
 			<Footer></Footer>
 		</div>
 	);

@@ -46,7 +46,12 @@ li {
 
 @media (min-width: 414px) {
 	.section-heading {
-		font-size: 2.2rem;
+		font-size: 2.6rem;
+	}
+}
+@media (min-width: 768px) {
+	.section-heading {
+		font-size: 3rem;
 	}
 }
 @media (min-width: 1920px) {
@@ -54,3 +59,4 @@ li {
 		font-size: 4rem;
 	}
 }
+

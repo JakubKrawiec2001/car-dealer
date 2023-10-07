@@ -1,0 +1,96 @@
+@use "../colors" as *;
+.d-container {
+	display: flex;
+	flex-direction: column;
+	gap: 4em;
+	margin-top: 10em;
+	.d-container-up {
+		display: flex;
+		align-items: center;
+		gap: 4em;
+
+		.d-text-box {
+			display: flex;
+			flex-direction: column;
+			gap: 1em;
+			flex: 1;
+			.d-name-box {
+				display: flex;
+				gap: 1em;
+				p {
+					font-size: 4rem;
+					font-weight: bold;
+				}
+				p:nth-child(2) {
+					font-weight: 400;
+				}
+			}
+			.d-features-box {
+				display: flex;
+				align-items: center;
+				color: #777;
+				.d-feature {
+					font-size: 1.6rem;
+				}
+				.d-dot {
+					font-size: 3rem;
+				}
+			}
+			.d-price {
+				font-weight: bold;
+				font-size: 3rem;
+				color: $green;
+				span {
+					font-weight: 400;
+					font-size: 2.6rem;
+				}
+			}
+			.d-info-container {
+				display: flex;
+				flex-direction: column;
+				gap: 2em;
+				padding: 1em;
+				border: 2px solid $gray;
+				color: #777;
+				.d-text {
+					display: flex;
+					align-items: center;
+					gap: 0.5em;
+					font-size: 2rem;
+				}
+				.d-btn-box {
+					display: flex;
+					flex-direction: column;
+					gap: 1em;
+					.d-btn {
+						padding: 1em;
+						border-radius: 4px;
+						font-weight: bold;
+						font-size: 2rem;
+						color: $white;
+						background-color: $green;
+						border: none;
+						cursor: pointer;
+						transition: all 0.3s ease;
+					}
+					.d-btn:nth-child(2) {
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						gap: 0.5em;
+						padding: 0.5em;
+						color: black;
+						background-color: transparent;
+						border: 2px solid $green;
+					}
+					.d-btn:nth-child(2):hover {
+						color: $white;
+					}
+					.d-btn:hover {
+						background-color: black;
+					}
+				}
+			}
+		}
+	}
+}

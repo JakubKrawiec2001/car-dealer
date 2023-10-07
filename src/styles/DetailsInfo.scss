@@ -1,0 +1,41 @@
+@use "../colors" as *;
+.di-container {
+	display: flex;
+	flex-direction: column;
+	gap: 4em;
+	.di-item {
+		.di-heading {
+			margin-bottom: 1em;
+			font-size: 3rem;
+		}
+		.di-content {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			gap: 2em;
+
+			.di-content-item {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				padding: 2em;
+				width: 45%;
+				border: 2px solid $gray;
+				p {
+					display: flex;
+					align-items: center;
+					gap: 0.5em;
+					color: #777;
+					font-size: 2rem;
+					.di-icon {
+						color: $green;
+					}
+				}
+				p:nth-child(2) {
+					color: black;
+					font-weight: bold;
+				}
+			}
+		}
+	}
+}

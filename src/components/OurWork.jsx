@@ -14,16 +14,32 @@ const OurWork = () => {
 
 				<div className="ow-body">
 					<div className="ow-item">
-						<img src={truck} alt="" className="ow-img" />
+						<div className="ow-img-box">
+							<img src={truck} alt="" className="ow-img" />
+						</div>
 						<p className="ow-text">Wybierasz samochód</p>
+						<p className="ow-desc">
+							Przejrzyj naszą ofertę samochodów dostawczych i wybierz swój typ
+						</p>
 					</div>
 					<div className="ow-item">
-						<img src={hands} alt="" className="ow-img" />
+						<div className="ow-img-box">
+							<img src={hands} alt="" className="ow-img" />
+						</div>
 						<p className="ow-text">Podpisujesz umowe</p>
+						<p className="ow-desc">
+							Dopełnij wszelkich formalności i stań się posiadaczem swojego
+							wybranego samochodu
+						</p>
 					</div>
 					<div className="ow-item">
-						<img src={highway} alt="" className="ow-img" />
-						<p className="ow-text">Odjeżdżasz swoim autem</p>
+						<div className="ow-img-box">
+							<img src={highway} alt="" className="ow-img" />
+						</div>
+						<p className="ow-text">Odjeżdżasz autem</p>
+						<p className="ow-desc">
+							Odjedź swoim nowym nabytkiem i ciesz się jego wysoką jakością
+						</p>
 					</div>
 				</div>
 			</section>

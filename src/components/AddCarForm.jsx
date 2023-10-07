@@ -20,7 +20,6 @@ const initialState = {
 	year: "",
 	price: "",
 	description: "",
-	equipment: "",
 };
 
 const AddCarForm = ({ currentUser }) => {
@@ -43,7 +42,6 @@ const AddCarForm = ({ currentUser }) => {
 		color,
 		doors,
 		price,
-		equipment,
 	} = form;
 
 	const navigate = useNavigate();

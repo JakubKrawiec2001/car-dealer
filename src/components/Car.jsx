@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Cars.scss";
+import "../styles/Car.scss";
 import { IoIosArrowDown } from "react-icons/io";
 import { AiOutlineHeart } from "react-icons/ai";
 import { BsDot } from "react-icons/bs";
@@ -8,8 +8,29 @@ import gear from "../assets/icons/gear.svg";
 import fuelPump from "../assets/icons/fuel-pump.svg";
 import road from "../assets/icons/road.svg";
 import { shortText } from "../utils/shortText";
+import { Link, useNavigate } from "react-router-dom";
+import { AiFillDelete } from "react-icons/ai";
+import { deleteDoc, doc } from "firebase/firestore";
+import { toast } from "react-toastify";
+import { db } from "../config/firebase";
 
-const Cars = ({ cars }) => {
+const Car = ({ cars, currentUser }) => {
+	const navigate = useNavigate();
+	const handleDelete = async (id) => {
+		if (
+			window.confirm(
+				"Ogłoszenie zostanie usunięte. Aby potwierdzić kliknij - ok"
+			)
+		) {
+			try {
+				await deleteDoc(doc(db, "cars", id));
+				toast.success("Usunięto ogłoszenie");
+				navigate("/");
+			} catch (err) {
+				console.log(err);
+			}
+		}
+	};
 	return (
 		<div className="cars-container wrapper">
 			<div className="cars-heading-box">
@@ -26,9 +47,9 @@ const Cars = ({ cars }) => {
 			<p className="text">
 				Liczba ogłoszeń: <span>{cars.length}</span>
 			</p>
-			{cars?.map((car) => {
+			{cars?.map((car, id) => {
 				return (
-					<div className="cars-item" key={car?.id}>
+					<Link to={`/details/${car.id}`} className="cars-item" key={car?.id}>
 						<img src={car?.imgUrl} alt="" className="cars-img" />
 						<div className="cars-item-text-box">
 							<div className="cars-item-text-box-l">
@@ -43,13 +64,13 @@ const Cars = ({ cars }) => {
 								<p className="featured">Wyróżnione</p>
 								<span className="car-text-box">
 									<img src={road} alt="" />
-									<p>{car?.course}</p>
+									<p className="car-text">{car?.course}</p>
 									<img src={fuelPump} alt="" />
-									<p>{car?.fuel}</p>
+									<p className="car-text">{car?.fuel}</p>
 									<img src={gear} alt="" />
-									<p>{car?.gearBox}</p>
+									<p className="car-text">{car?.gearBox}</p>
 									<img src={date} alt="" />
-									<p>{car?.year}</p>
+									<p className="car-text">{car?.year}</p>
 								</span>
 								<p className="car-desc">{shortText(car?.description, 200)}</p>
 							</div>
@@ -58,14 +79,20 @@ const Cars = ({ cars }) => {
 									{car?.price}
 									<span> PLN</span>
 								</p>
-								<AiOutlineHeart className="cars-icon"></AiOutlineHeart>
+								{currentUser?.uid === process.env.REACT_APP_ADMIN_IP ? (
+									<AiFillDelete
+										className="cars-icon"
+										onClick={() => handleDelete(car.id)}></AiFillDelete>
+								) : (
+									<AiOutlineHeart className="cars-icon"></AiOutlineHeart>
+								)}
 							</div>
 						</div>
-					</div>
+					</Link>
 				);
 			})}
 		</div>
 	);
 };
 
-export default Cars;
+export default Car;

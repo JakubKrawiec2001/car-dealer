@@ -1,0 +1,107 @@
+@use "../colors" as *;
+
+.contact-popup-container {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	z-index: 10000;
+	background-color: rgba(0, 0, 0, 0.9);
+	.contact-close-icon {
+		position: absolute;
+		top: 2%;
+		right: 2%;
+		font-size: 5rem;
+		color: $white;
+		cursor: pointer;
+		transition: all 0.3s ease;
+	}
+	.contact-close-icon:hover {
+		color: $green;
+		scale: 1.1;
+	}
+	.contact-body {
+		display: flex;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 60%;
+		height: 70vh;
+		border-radius: 10px;
+		background-color: $gray;
+		box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+			rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+			rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+		overflow: hidden;
+		.map {
+			flex: 1;
+			border: none;
+		}
+		.contact-body-text-box {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-between;
+			flex: 1;
+			box-shadow: rgba(0, 0, 0, 0.24) 5px 0px 8px;
+			z-index: 1;
+			.contact-heading {
+				position: relative;
+				margin-top: 1em;
+				width: fit-content;
+				font-size: 4rem;
+				text-align: center;
+				text-transform: uppercase;
+                
+			}
+			.contact-heading::before {
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
+				bottom: -10%;
+				height: 5px;
+				width: 50%;
+				background-color: $green;
+				content: "";
+			}
+			a {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin-bottom: 2em;
+				width: 50px;
+			}
+			.fb-icon {
+				width: 100%;
+				cursor: pointer;
+				transition: all 0.3s ease;
+			}
+			.fb-icon:hover {
+				scale: 1.1;
+			}
+			.contact-text-container {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				width: 100%;
+				gap: 2em;
+
+				.contact-text {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					gap: 0.2em;
+					padding: 0.5em 0;
+					width: 60%;
+					font-size: 2.6rem;
+					border: 2px solid $green;
+					border-radius: 10px;
+                    .text-icon {
+                        color: $green;
+                    }
+                    
+				}
+			}
+		}
+	}
+}

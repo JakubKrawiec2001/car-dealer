@@ -1,21 +1,23 @@
 @use "../colors" as *;
 .add-car-form-container {
-	margin-top: 10em;
+	margin-top: 8em;
+	padding: 1em;
 	.add-car-heading {
 		padding: 2em;
 		text-align: center;
 		text-transform: uppercase;
-		font-size: 3rem;
+		font-size: 2rem;
 	}
 	.add-car-form {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap: 3em;
+		gap: 2em;
 
 		.add-car-row {
 			display: flex;
-			gap: 3em;
+			flex-wrap: wrap;
+			gap: 2em;
 			width: 100%;
 
 			.add-car-input-box {
@@ -121,6 +123,32 @@
 			background-color: $gray;
 			color: black;
 			cursor: default;
+		}
+	}
+}
+
+@media (min-width: 1200px) {
+	.add-car-form-container {
+		.add-car-heading {
+			font-size: 2.6rem;
+		}
+	}
+}
+
+@media (min-width: 1920px) {
+	.add-car-form-container {
+		margin-top: 10em;
+		padding: 0;
+		.add-car-heading {
+			font-size: 3rem;
+		}
+		.add-car-form {
+			gap: 3em;
+
+			.add-car-row {
+				flex-wrap: nowrap;
+				gap: 3em;
+			}
 		}
 	}
 }

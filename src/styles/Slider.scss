@@ -1,0 +1,149 @@
+@use "../colors" as *;
+.s-container {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1em;
+	padding: 1em;
+	height: max-content;
+	border-radius: 4px;
+	background-color: $gray;
+
+	.s-arrow {
+		position: absolute;
+		top: 40%;
+		transform: translateY(-50%);
+		font-size: 5rem;
+		cursor: pointer;
+		transition: all 0.3s ease;
+	}
+	.s-arrow:hover {
+		color: $green;
+		scale: 1.1;
+	}
+	.arrow-l {
+		left: 2%;
+	}
+	.arrow-r {
+		right: 2%;
+	}
+	.main-image {
+		width: 70vh;
+		height: 50vh;
+		border-radius: 10px;
+		cursor: pointer;
+		object-fit: contain;
+	}
+	.images-box {
+		display: flex;
+		justify-content: center;
+		gap: 1em;
+
+		.slider-image {
+			position: relative;
+			width: 18vh;
+			height: 10vh;
+			flex: 1;
+			border-radius: 4px;
+			object-fit: cover;
+			cursor: pointer;
+			transition: all 0.3s ease;
+		}
+
+		.slider-image:hover {
+			border: 1px solid $green;
+		}
+		.last-slider-image-box {
+			position: relative;
+			cursor: pointer;
+			.last-slider-image-shadow {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				height: 10vh;
+				background-color: rgba(0, 0, 0, 0.7);
+			}
+			.last-slider-image-text {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				font-size: 3rem;
+				font-weight: bold;
+				color: $white;
+			}
+		}
+	}
+	.image-popup-box {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100vh;
+		background-color: rgba(0, 0, 0, 0.9);
+		z-index: 1000;
+		.popup-image {
+			width: 60%;
+			border-radius: 10px;
+		}
+		.popup-arrow {
+			position: absolute;
+			color: $white;
+			font-size: 5rem;
+			cursor: pointer;
+			transition: all 0.3s ease;
+		}
+		.popup-arrow:hover {
+			color: $green;
+			scale: 1.1;
+		}
+		.popup-arrow-l {
+			left: 3%;
+		}
+		.popup-arrow-r {
+			right: 3%;
+		}
+		.popup-close-icon {
+			position: absolute;
+			right: 2%;
+			top: 2%;
+			font-size: 5rem;
+			color: $white;
+			cursor: pointer;
+			transition: all 0.3s ease;
+		}
+		.popup-close-icon:hover {
+			color: $green;
+			scale: 1.1;
+		}
+		.slide-number {
+			bottom: 2%;
+		}
+	}
+	.noSelect {
+		-webkit-tap-highlight-color: transparent;
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+	.slide-number {
+		position: absolute;
+		right: 2%;
+		padding: 0.5em 1em;
+		font-size: 1.4rem;
+		border-radius: 50px;
+		background-color: rgba(0, 0, 0, 0.7);
+		color: $white;
+	}
+}

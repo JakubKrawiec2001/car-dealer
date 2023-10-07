@@ -15,6 +15,7 @@ import AddCar from "./pages/AddCar";
 import AllCars from "./pages/AllCars";
 import Details from "./pages/Details";
 import { collection, onSnapshot } from "firebase/firestore";
+import ScrollToTop from "./utils/ScrollToTop";
 
 function App() {
 	const [email, setEmail] = useState("");
@@ -92,6 +93,7 @@ function App() {
 
 	return (
 		<div className="App">
+			<ScrollToTop></ScrollToTop>
 			<Nav currentUser={currentUser} setCurrentUser={setCurrentUser}></Nav>
 			<ToastContainer position="top-center"></ToastContainer>
 			<Routes>
@@ -100,7 +102,10 @@ function App() {
 					element={<Home currentUser={currentUser} cars={cars}></Home>}></Route>
 				<Route
 					path="/allCars"
-					element={<AllCars cars={cars}></AllCars>}></Route>
+					element={
+						<AllCars cars={cars} currentUser={currentUser}></AllCars>
+					}></Route>
+
 				<Route path="/details/:id" element={<Details></Details>}></Route>
 				<Route
 					path="/login"

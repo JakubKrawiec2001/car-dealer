@@ -22,7 +22,7 @@ const Header = () => {
 					Profesjonalnie zadbamy o każde twoje potrzeby. Nasze samochody staną
 					się łącznikiem twojego biznesu ze światem.
 				</p>
-				<Link to="/" className="hero-btn">
+				<Link to="/allCars" className="hero-btn">
 					Nasza Flota
 				</Link>
 				<div className="header-contact-box">
@@ -31,7 +31,7 @@ const Header = () => {
 						alt="location icon"
 						className="header-contact-icon"
 					/>
-					<p className="header-contact-text">Wieliczka, ul. Dobra 86</p>
+					<p className="header-contact-text">Wieliczka, ul. Test 86</p>
 
 					<img src={phone} alt="phone icon" className="header-contact-icon" />
 					<p className="header-contact-text">123-223-293</p>

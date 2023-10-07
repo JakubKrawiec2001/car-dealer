@@ -13,25 +13,23 @@
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
-			flex: 1;
 			border-radius: 4px;
 			box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 			overflow: hidden;
 			color: black;
 			cursor: pointer;
 			transition: all 0.3s ease;
-			min-height: 55vh;
-			height: 55vh;
+			height: 45vh;
+
 			.fo-img {
-				flex: 1;
 				width: 100%;
+				height: 25vh;
 				object-fit: cover;
 			}
 			.fo-item-body {
 				display: flex;
 				flex-direction: column;
 				justify-content: space-between;
-				gap: 0.5em;
 				padding: 1em;
 				flex: 1;
 
@@ -64,7 +62,8 @@
 
 			.fo-details {
 				display: flex;
-				justify-content: space-between;
+				align-items: center;
+
 				.fo-detail {
 					display: flex;
 					flex-direction: column;
@@ -138,7 +137,9 @@
 	.fo-container {
 		.fo-item-box {
 			flex-direction: row;
+
 			.fo-item {
+				width: 45%;
 				.fo-details {
 					.fo-detail {
 						font-size: 1rem;
@@ -151,6 +152,31 @@
 		}
 	}
 }
+
+@media (min-width: 1200px) {
+	.fo-container {
+		.fo-item-box {
+			.fo-item {
+				width: 30%;
+				.fo-item-body {
+					.fo-desc {
+						font-size: 1.4rem;
+					}
+				}
+			}
+		}
+	}
+}
+@media (min-width: 1200px) {
+	.fo-container {
+		.fo-item-box {
+			.fo-item {
+				flex: 1;
+			}
+		}
+	}
+}
+
 @media (min-width: 1920px) {
 	.fo-container {
 		padding: 0;
@@ -160,9 +186,6 @@
 			gap: 3em;
 			margin: 4em 0;
 			.fo-item {
-				.fo-img {
-					height: 30vh;
-				}
 				.fo-item-body {
 					margin-bottom: 1em;
 					.fo-name {
