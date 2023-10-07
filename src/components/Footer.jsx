@@ -33,12 +33,11 @@ const Footer = () => {
 				<div className="f-col">
 					<p className="f-col-heading">Informacje</p>
 					<p className="f-text">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Dignissimos, voluptatem voluptates nemo quasi ullam, facilis dolorem
-						commodi cupiditate optio excepturi iure ex dolore corrupti odit quod
-						possimus similique placeat illo! Nihil est nesciunt laboriosam iure,
-						fugit non reiciendis illo illum nisi consectetur dolorum ullam
-						aperiam deserunt nulla perferendis nam quis.
+						Profesjonalnie zadbamy o każde twoje potrzeby. Nasze samochody staną
+						się łącznikiem twojego biznesu ze światem. Przejrzyj naszą ofertę
+						samochodów dostawczych i wybierz swój typ. Dopełnij wszelkich
+						formalności i stań się posiadaczem swojego wybranego samochodu.
+						Odjedź swoim nowym nabytkiem i ciesz się jego wysoką jakością.
 					</p>
 					<p className="f-col-heading">Konto</p>
 					<div className="f-icons-box">
@@ -59,7 +58,8 @@ const Footer = () => {
 				</div>
 			</div>
 			<div className="f-line"></div>
-			<p className="copyright">© Copyrights 2023 LOGO</p>
+			<p className="copyright">© Copyrights 2023</p>
+			<p className="author">Stworzone przez: <span>Jakub Krawiec</span></p>
 		</footer>
 	);
 };

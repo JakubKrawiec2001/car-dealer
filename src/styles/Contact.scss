@@ -26,7 +26,7 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 		width: 60%;
-		height: 70vh;
+		height: 50vh;
 		border-radius: 10px;
 		background-color: $gray;
 		box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
@@ -34,6 +34,7 @@
 			rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 		overflow: hidden;
 		.map {
+			display: none;
 			flex: 1;
 			border: none;
 		}
@@ -49,16 +50,15 @@
 				position: relative;
 				margin-top: 1em;
 				width: fit-content;
-				font-size: 4rem;
+				font-size: 2rem;
 				text-align: center;
 				text-transform: uppercase;
-                
 			}
 			.contact-heading::before {
 				position: absolute;
 				left: 50%;
 				transform: translateX(-50%);
-				bottom: -10%;
+				bottom: -30%;
 				height: 5px;
 				width: 50%;
 				background-color: $green;
@@ -69,7 +69,7 @@
 				justify-content: center;
 				align-items: center;
 				margin-bottom: 2em;
-				width: 50px;
+				width: 30px;
 			}
 			.fb-icon {
 				width: 100%;
@@ -92,14 +92,75 @@
 					justify-content: center;
 					gap: 0.2em;
 					padding: 0.5em 0;
-					width: 60%;
-					font-size: 2.6rem;
+					width: 80%;
+					font-size: 1.6rem;
 					border: 2px solid $green;
 					border-radius: 10px;
-                    .text-icon {
-                        color: $green;
-                    }
-                    
+					.text-icon {
+						color: $green;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.contact-popup-container {
+		.contact-body {
+			width: 50%;
+
+			.contact-body-text-box {
+				.contact-heading {
+					font-size: 2.4rem;
+				}
+
+				a {
+					width: 40px;
+				}
+
+				.contact-text-container {
+					.contact-text {
+						width: 70%;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 1200px) {
+	.contact-popup-container {
+		.contact-body {
+			.map {
+				display: flex;
+			}
+		}
+	}
+}
+
+@media (min-width: 1920px) {
+	.contact-popup-container {
+		.contact-body {
+			width: 60%;
+			height: 70vh;
+
+			.contact-body-text-box {
+				.contact-heading {
+					font-size: 4rem;
+				}
+				.contact-heading::before {
+					bottom: -10%;
+				}
+				a {
+					width: 50px;
+				}
+
+				.contact-text-container {
+					.contact-text {
+						width: 60%;
+						font-size: 2.6rem;
+					}
 				}
 			}
 		}

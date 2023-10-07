@@ -6,19 +6,20 @@
 	margin-top: 10em;
 	.d-container-up {
 		display: flex;
-		align-items: center;
-		gap: 4em;
-
+		flex-direction: column;
+		gap: 2em;
+		padding: 0 1em;
 		.d-text-box {
 			display: flex;
 			flex-direction: column;
-			gap: 1em;
+			gap: 0.5em;
 			flex: 1;
+
 			.d-name-box {
 				display: flex;
 				gap: 1em;
 				p {
-					font-size: 4rem;
+					font-size: 3rem;
 					font-weight: bold;
 				}
 				p:nth-child(2) {
@@ -30,19 +31,19 @@
 				align-items: center;
 				color: #777;
 				.d-feature {
-					font-size: 1.6rem;
+					font-size: 1.2rem;
 				}
 				.d-dot {
-					font-size: 3rem;
+					font-size: 2rem;
 				}
 			}
 			.d-price {
 				font-weight: bold;
-				font-size: 3rem;
+				font-size: 2rem;
 				color: $green;
 				span {
 					font-weight: 400;
-					font-size: 2.6rem;
+					font-size: 1.6rem;
 				}
 			}
 			.d-info-container {
@@ -56,7 +57,7 @@
 					display: flex;
 					align-items: center;
 					gap: 0.5em;
-					font-size: 2rem;
+					font-size: 1.4rem;
 				}
 				.d-btn-box {
 					display: flex;
@@ -66,7 +67,7 @@
 						padding: 1em;
 						border-radius: 4px;
 						font-weight: bold;
-						font-size: 2rem;
+						font-size: 1.4rem;
 						color: $white;
 						background-color: $green;
 						border: none;
@@ -88,6 +89,97 @@
 					}
 					.d-btn:hover {
 						background-color: black;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.d-container {
+		.d-container-up {
+			align-items: center;
+			flex-direction: row;
+		}
+	}
+}
+
+@media (min-width: 1200px) {
+	.d-container {
+		.d-container-up {
+			.d-text-box {
+				.d-name-box {
+					p {
+						font-size: 3.4rem;
+					}
+				}
+				.d-features-box {
+					.d-feature {
+						font-size: 1.6rem;
+					}
+					.d-dot {
+						font-size: 3rem;
+					}
+				}
+				.d-price {
+					font-size: 2.6rem;
+					span {
+						font-size: 1.8rem;
+					}
+				}
+				.d-info-container {
+					.d-text {
+						font-size: 1.6rem;
+					}
+					.d-btn-box {
+						.d-btn {
+							font-size: 1.6rem;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 1920px) {
+	.d-container {
+		.d-container-up {
+			gap: 4em;
+			padding: 0;
+			.d-text-box {
+				gap: 1em;
+
+				.d-name-box {
+					display: flex;
+					gap: 1em;
+					p {
+						font-size: 4rem;
+					}
+				}
+				.d-features-box {
+					.d-feature {
+						font-size: 1.6rem;
+					}
+					.d-dot {
+						font-size: 3rem;
+					}
+				}
+				.d-price {
+					font-size: 3rem;
+					span {
+						font-size: 2.6rem;
+					}
+				}
+				.d-info-container {
+					.d-text {
+						font-size: 2rem;
+					}
+					.d-btn-box {
+						.d-btn {
+							font-size: 2rem;
+						}
 					}
 				}
 			}

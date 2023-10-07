@@ -55,45 +55,8 @@ const DetailsInfo = ({ car }) => {
 				</div>
 			</div>
 			<div className="di-item">
-				<h2 className="di-heading">Wybrane wyposażenie</h2>
-				<div className="di-content">
-					<div className="di-content-item">
-						<p>
-							<AiOutlineCalendar className="di-icon"></AiOutlineCalendar>Rocznik
-						</p>
-						<p>{car?.year}</p>
-					</div>
-					<div className="di-content-item">
-						<p>
-							<AiOutlineCalendar className="di-icon"></AiOutlineCalendar>Rocznik
-						</p>
-						<p>{car?.year}</p>
-					</div>
-					<div className="di-content-item">
-						<p>
-							<AiOutlineCalendar className="di-icon"></AiOutlineCalendar>Rocznik
-						</p>
-						<p>{car?.year}</p>
-					</div>
-					<div className="di-content-item">
-						<p>
-							<AiOutlineCalendar className="di-icon"></AiOutlineCalendar>Rocznik
-						</p>
-						<p>{car?.year}</p>
-					</div>
-					<div className="di-content-item">
-						<p>
-							<AiOutlineCalendar className="di-icon"></AiOutlineCalendar>Rocznik
-						</p>
-						<p>{car?.year}</p>
-					</div>
-					<div className="di-content-item">
-						<p>
-							<AiOutlineCalendar className="di-icon"></AiOutlineCalendar>Rocznik
-						</p>
-						<p>{car?.year}</p>
-					</div>
-				</div>
+				<h2 className="di-heading">Opis pojazdu</h2>
+				<p className="di-desc">{car?.description}</p>
 			</div>
 		</div>
 	);

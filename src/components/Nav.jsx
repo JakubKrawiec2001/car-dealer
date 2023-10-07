@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "../styles/Nav.scss";
 import { Link, useNavigate } from "react-router-dom";
-import logo from "../assets/icons/logo.svg";
 import burgerIcon from "../assets/icons/menu.svg";
 import closeIcon from "../assets/icons/close.svg";
 import { auth } from "../config/firebase";
 import { signOut } from "firebase/auth";
 import { toast } from "react-toastify";
 import { RiAccountCircleFill } from "react-icons/ri";
-import { AiOutlineHeart } from "react-icons/ai";
 import { IoIosAdd } from "react-icons/io";
 import Contact from "./Contact";
 
