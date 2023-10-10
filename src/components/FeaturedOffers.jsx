@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/FeaturedOffers.scss";
 import { Link } from "react-router-dom";
 import { shortText } from "../utils/shortText";
+import loading from "../assets/icons/loading.gif";
 
 const FeaturedOffers = ({ cars }) => {
 	return (
@@ -45,6 +46,7 @@ const FeaturedOffers = ({ cars }) => {
 						</Link>
 					);
 				})}
+				{cars == "" && <img src={loading} className="loading-icon" />}
 			</div>
 			<Link to="/allCars">
 				<button className="fo-btn">Sprawdź pełną ofertę</button>

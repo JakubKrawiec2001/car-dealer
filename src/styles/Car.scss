@@ -4,29 +4,27 @@
 	flex-direction: column;
 	gap: 2em;
 	padding: 1em;
+
 	.cars-heading-box {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		margin: 15em 0 4em 0;
-
 		.sort-box {
-			p {
+			display: flex;
+			flex-direction: column;
+
+			.sort-text {
 				font-weight: bold;
-				font-size: 1.2rem;
-			}
-			button {
-				display: flex;
-				align-items: center;
-				gap: 3em;
-				padding: 0.5em 1em;
 				font-size: 1.4rem;
+			}
+			select {
+				padding: 0.5em 1em;
+				font-size: 1.5rem;
 				border-radius: 4px;
 				border: none;
 				background-color: $gray;
-				.icon {
-					font-size: 2rem;
-				}
+				cursor: pointer;
 			}
 		}
 	}
@@ -142,6 +140,16 @@
 
 @media (min-width: 768px) {
 	.cars-container {
+		.cars-heading-box {
+			.sort-box {
+				.sort-text {
+					font-size: 1.6rem;
+				}
+				select {
+					font-size: 1.6rem;
+				}
+			}
+		}
 		.cars-item {
 			flex-direction: row;
 			.cars-img {
@@ -168,18 +176,15 @@
 
 @media (min-width: 1200px) {
 	.cars-container {
-		padding: 0;
+		padding: 0 1em;
 		.cars-heading-box {
 			.sort-box {
-				p {
-					font-size: 1.6rem;
-				}
-				button {
+				gap: 0.5em;
+				.sort-text {
 					font-size: 2rem;
-
-					.icon {
-						font-size: 4rem;
-					}
+				}
+				select {
+					font-size: 1.8rem;
 				}
 			}
 		}
@@ -188,6 +193,60 @@
 		}
 		.cars-item {
 			height: 30vh;
+			.cars-img {
+				width: 10%;
+			}
+			.cars-item-text-box {
+				.cars-item-text-box-l {
+					.car-name {
+						font-size: 3rem;
+					}
+					.car-text-box {
+						.small-text {
+							font-size: 1.4rem;
+						}
+						.car-text {
+							font-size: 1.6rem;
+						}
+						.dot {
+							font-size: 2rem;
+						}
+						img {
+							width: 2%;
+						}
+					}
+
+					.car-desc {
+						margin-bottom: 0;
+						font-size: 1.6rem;
+					}
+				}
+				.cars-item-text-box-r {
+					flex-direction: column;
+					align-items: flex-end;
+
+					p {
+						font-size: 3rem;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 1920px) {
+	.cars-container {
+		padding: 0;
+	}
+}
+@media (min-width: 2000px) {
+	.cars-container {
+		.text {
+			font-size: 2rem;
+		}
+		.cars-item {
+			height: 23vh;
+
 			.cars-img {
 				width: 10%;
 			}

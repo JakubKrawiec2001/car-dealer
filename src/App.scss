@@ -43,6 +43,9 @@ li {
 		font-weight: 400;
 	}
 }
+.loading-icon {
+	width: 15%;
+}
 
 @media (min-width: 414px) {
 	.section-heading {
@@ -53,7 +56,18 @@ li {
 	.section-heading {
 		font-size: 3rem;
 	}
+	.loading-icon {
+		width: 10%;
+	}
 }
+
+@media (min-width: 1200px) {
+	.loading-icon {
+		margin: 2em;
+		width: 5%;
+	}
+}
+
 @media (min-width: 1920px) {
 	.section-heading {
 		font-size: 4rem;
