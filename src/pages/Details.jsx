@@ -66,7 +66,7 @@ const Details = () => {
 								</p>
 							</div>
 							<div className="d-btn-box">
-								<button className="d-btn">Kontakt ze sprzedającym</button>
+								<a href="tel:123-223-293" className="d-btn">Kontakt ze sprzedającym</a>
 								{!showPhone ? (
 									<button className="d-btn" onClick={() => setShowPhone(true)}>
 										Wyświetl numer

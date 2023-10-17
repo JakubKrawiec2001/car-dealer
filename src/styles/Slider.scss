@@ -169,21 +169,22 @@
 }
 @media (min-width: 1200px) {
 	.s-container {
+		
 		.main-image {
-			width: 80vh;
-			height: 40vh;
+			width: 110vh;
+			height: 50vh;
 		}
 		.images-box {
 			.slider-image {
-				width: 12vh;
-				height: 8vh;
+				width: 20vh;
+				height: 12vh;
 			}
 			.last-slider-image-box {
 				.last-slider-image-shadow {
-					height: 8vh;
+					height: 12vh;
 				}
 				.last-slider-image-text {
-					font-size: 2rem;
+					font-size: 2.6rem;
 				}
 			}
 		}

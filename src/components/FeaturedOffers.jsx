@@ -20,7 +20,7 @@ const FeaturedOffers = ({ cars }) => {
 								<p className="fo-name">
 									{car.name} <span className="fo-model">{car.model}</span>
 								</p>
-								<p className="fo-desc">{shortText(car.description, 120)}</p>
+								<p className="fo-desc">{shortText(car.description, 100)}</p>
 								<div className="fo-text-box">
 									<p className="fo-text">{car.power} KM</p>
 									<p className="fo-text">{car.engineSize} cm3</p>

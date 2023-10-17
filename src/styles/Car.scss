@@ -192,7 +192,7 @@
 			font-size: 2rem;
 		}
 		.cars-item {
-			height: 30vh;
+			height: 35vh;
 			.cars-img {
 				width: 10%;
 			}
@@ -218,8 +218,8 @@
 
 					.car-desc {
 						margin-bottom: 0;
+						width: 120%;
 						font-size: 1.6rem;
-						
 					}
 				}
 				.cars-item-text-box-r {
@@ -238,6 +238,9 @@
 @media (min-width: 1920px) {
 	.cars-container {
 		padding: 0;
+		.cars-item {
+			height: 30vh;
+		}
 	}
 }
 @media (min-width: 2000px) {
