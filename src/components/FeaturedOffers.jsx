@@ -46,7 +46,7 @@ const FeaturedOffers = ({ cars }) => {
 						</Link>
 					);
 				})}
-				{cars == "" && <img src={loading} className="loading-icon" />}
+				{cars === "" && <img src={loading} className="loading-icon" alt="loading"/>}
 			</div>
 			<Link to="/allCars">
 				<button className="fo-btn">Sprawdź pełną ofertę</button>

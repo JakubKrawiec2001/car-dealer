@@ -17,15 +17,8 @@ nav {
 		align-items: center;
 		padding: 2em 0;
 
-		.logo-text {
-			font-weight: 700;
-			font-size: 1.6rem;
-			color: black;
-			cursor: pointer;
-			transition: all 0.3s ease;
-		}
-		.logo-text:hover {
-			color: $green;
+		.logo {
+			width: 30%;
 		}
 
 		.burger-btn {
@@ -135,6 +128,21 @@ nav {
 				.menu-item:hover::before {
 					animation: navHover 0.3s forwards;
 				}
+				.menu-login-btn {
+					padding: 0.2em 0.5em;
+					font-size: 1.6rem;
+					font-weight: 400;
+					color: black;
+					border: 3px solid $green;
+					border-radius: 4px;
+					transition: all 0.3s ease;
+					cursor: pointer;
+				}
+				.menu-login-btn:hover {
+					background-color: black;
+					border: 3px solid black;
+					color: $white;
+				}
 				.nav-icon {
 					font-size: 2.6rem;
 					cursor: pointer;
@@ -143,6 +151,7 @@ nav {
 				.nav-icon:hover {
 					color: $green;
 				}
+				
 			}
 			.burger-btn {
 				display: none;
@@ -167,57 +176,11 @@ nav {
 				background-color: $green;
 				scale: 1.1;
 			}
-			.account-menu {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				gap: 2em;
-				position: absolute;
-				right: 0;
-				bottom: -230%;
-				padding: 2em;
-				min-width: 20vh;
-				height: 17vh;
-				background-color: $white;
-				border-bottom-right-radius: 10px;
-				border-bottom-left-radius: 10px;
-
-				.user-name {
-					padding-bottom: 0.5em;
-					font-size: 1.6rem;
-					font-weight: bold;
-					border-bottom: 1px solid #a2a1a1;
-				}
-				.add-new-publication {
-					display: flex;
-					align-items: center;
-					font-size: 1.4rem;
-					background: none;
-					border: transparent;
-					transition: all 0.3s ease;
-					cursor: pointer;
-					.add-icon {
-						font-size: 2rem;
-					}
-				}
-				.add-new-publication:hover {
-					color: $green;
-				}
-			}
 		}
 	}
 }
 
-@media (min-width: 2000px) {
-	nav {
-		.nav-container {
-			.account-menu {
-				height: 15vh;
-				bottom: -300%;
-			}
-		}
-	}
-}
+
 @keyframes navHover {
 	from {
 		width: 0%;

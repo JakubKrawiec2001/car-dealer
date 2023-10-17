@@ -6,14 +6,13 @@ import closeIcon from "../assets/icons/close.svg";
 import { auth } from "../config/firebase";
 import { signOut } from "firebase/auth";
 import { toast } from "react-toastify";
-import { RiAccountCircleFill } from "react-icons/ri";
-import { IoIosAdd } from "react-icons/io";
+import { HashLink } from "react-router-hash-link";
+import logo from "../assets/icons/logo.svg";
 import Contact from "./Contact";
 
 const Nav = ({ currentUser, setCurrentUser }) => {
 	const [stickyNav, setStickyNav] = useState("");
 	const [open, setOpen] = useState(false);
-	const [openAccountMenu, setopenAccountMenu] = useState(false);
 	const [openContactPopup, setOpenContactPopup] = useState(false);
 	const navigate = useNavigate();
 
@@ -29,10 +28,10 @@ const Nav = ({ currentUser, setCurrentUser }) => {
 	const handleOpenNav = () => {
 		!open ? setOpen(true) : setOpen(false);
 	};
-
-	const handleAccountMenu = () => {
-		!openAccountMenu ? setopenAccountMenu(true) : setopenAccountMenu(false);
-	};
+	const handleOpenContactPopup = () => {
+		setOpenContactPopup(true)
+		setOpen(false)
+	}
 
 	const logOut = () => {
 		signOut(auth)
@@ -42,7 +41,7 @@ const Nav = ({ currentUser, setCurrentUser }) => {
 			.catch((error) => {
 				console.error(error);
 			});
-		setopenAccountMenu(false);
+
 		setCurrentUser(null);
 		return toast.success("Wylogowano");
 	};
@@ -58,9 +57,9 @@ const Nav = ({ currentUser, setCurrentUser }) => {
 				setOpenContactPopup={setOpenContactPopup}></Contact>
 			<nav className={stickyNav}>
 				<div className="wrapper nav-container">
-					<Link to="/">
-						<p className="logo-text">LOGO</p>
-					</Link>
+					<HashLink to="/#">
+						<img src={logo} alt="logo" className="logo" />
+					</HashLink>
 					<div className="menu">
 						<Link to="/" className="menu-item">
 							Start
@@ -78,10 +77,20 @@ const Nav = ({ currentUser, setCurrentUser }) => {
 							}>
 							Kontakt
 						</p>
-
-						<RiAccountCircleFill
-							className="nav-icon"
-							onClick={handleAccountMenu}></RiAccountCircleFill>
+						{currentUser?.uid === process.env.REACT_APP_ADMIN_IP && (
+							<Link to="/addCar" className="menu-item">
+								Dodaj ogłoszenie
+							</Link>
+						)}
+						{!currentUser ? (
+							<Link to="/login" className="menu-login-btn">
+								Zaloguj się
+							</Link>
+						) : (
+							<p onClick={() => logOut()} className="menu-login-btn">
+								Wyloguj się
+							</p>
+						)}
 					</div>
 					{!open ? (
 						<img
@@ -114,12 +123,9 @@ const Nav = ({ currentUser, setCurrentUser }) => {
 							Flota
 						</Link>
 
-						<Link
-							to="/"
-							className="mobile-menu-item"
-							onClick={() => setOpen(false)}>
+						<p className="mobile-menu-item" onClick={() => handleOpenContactPopup()}>
 							Kontakt
-						</Link>
+						</p>
 						{currentUser?.uid === process.env.REACT_APP_ADMIN_IP && (
 							<Link
 								to="/addCar"
@@ -142,28 +148,6 @@ const Nav = ({ currentUser, setCurrentUser }) => {
 							</p>
 						)}
 					</div>
-
-					{openAccountMenu ? (
-						<div className="account-menu">
-							<p className="user-name">{currentUser?.email}</p>
-							{currentUser?.uid === process.env.REACT_APP_ADMIN_IP ? (
-								<Link to="/addCar" onClick={() => setopenAccountMenu(false)}>
-									<button className="add-new-publication">
-										<IoIosAdd className="add-icon"></IoIosAdd>Dodaj ogłoszenie
-									</button>
-								</Link>
-							) : null}
-							{!currentUser ? (
-								<Link to="/login" className="login-btn">
-									Zaloguj się
-								</Link>
-							) : (
-								<button onClick={() => logOut()} className="login-btn">
-									Wyloguj się
-								</button>
-							)}
-						</div>
-					) : null}
 				</div>
 			</nav>
 		</>

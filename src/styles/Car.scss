@@ -44,7 +44,7 @@
 		box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 4px;
 		transition: all 0.3s ease;
 		cursor: pointer;
-
+		overflow: hidden;
 		.cars-img {
 			flex: 1;
 			width: 100%;
@@ -219,6 +219,7 @@
 					.car-desc {
 						margin-bottom: 0;
 						font-size: 1.6rem;
+						
 					}
 				}
 				.cars-item-text-box-r {

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "../styles/Car.scss";
-import { AiOutlineHeart } from "react-icons/ai";
 import { BsDot } from "react-icons/bs";
 import date from "../assets/icons/date.svg";
 import gear from "../assets/icons/gear.svg";
@@ -92,12 +91,10 @@ const Car = ({ cars, currentUser }) => {
 										{car?.price}
 										<span> PLN</span>
 									</p>
-									{currentUser?.uid === process.env.REACT_APP_ADMIN_IP ? (
+									{currentUser?.uid === process.env.REACT_APP_ADMIN_IP && (
 										<AiFillDelete
 											className="cars-icon"
 											onClick={() => handleDelete(car.id)}></AiFillDelete>
-									) : (
-										<AiOutlineHeart className="cars-icon"></AiOutlineHeart>
 									)}
 								</div>
 							</div>

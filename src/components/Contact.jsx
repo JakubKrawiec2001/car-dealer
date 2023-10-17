@@ -25,7 +25,9 @@ const Contact = ({ openContactPopup, setOpenContactPopup }) => {
 							</div>
 							<a
 								href="https://www.facebook.com/marek.konrad.3192479"
-								target="_blank">
+								target="_blank"
+								rel="noreferrer"
+								>
 								<img src={fb} alt="facebook icon" className="fb-icon" />
 							</a>
 						</div>

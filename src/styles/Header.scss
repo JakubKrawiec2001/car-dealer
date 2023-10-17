@@ -1,8 +1,8 @@
 @use "../colors" as *;
 .header {
 	position: relative;
-	height: 90vh;
-
+	height: 70vh;
+	
 	.header-r {
 		position: absolute;
 		right: 0;
@@ -38,7 +38,7 @@
 		gap: 1em;
 		height: 100%;
 		padding-left: 1em;
-
+		
 		.crown-box {
 			display: flex;
 			align-items: flex-end;
@@ -83,7 +83,7 @@
 		}
 		.header-contact-box {
 			position: absolute;
-			bottom: 15%;
+			bottom: 10%;
 			left: 50%;
 			transform: translateX(-50%);
 			display: flex;
@@ -187,7 +187,7 @@
 		.hero-car {
 			right: 0;
 			top: 50%;
-			width: 60vh;
+			width: 80vh;
 		}
 		.header-container {
 			justify-content: center;
@@ -212,20 +212,18 @@
 			}
 
 			.header-contact-box {
+				margin-top: 0.5em;
 				bottom: 10%;
 				left: 0;
 				transform: translateX(0);
 				gap: 1em;
-				width: 60vh;
+				width: 70vh;
 			}
 		}
 	}
 }
 @media (min-width: 1400px) {
 	.header {
-		.hero-car {
-			width: 70vh;
-		}
 		.header-container {
 			padding: 0;
 		}
@@ -235,7 +233,7 @@
 @media (min-width: 1920px) {
 	.header {
 		height: 90vh;
-		
+
 		.hero-car {
 			right: 5%;
 			width: 80vh;
@@ -243,6 +241,9 @@
 		.header-container {
 			.hero-heading {
 				font-size: 6rem;
+			}
+			.header-contact-box {
+				width: 55vh;
 			}
 		}
 	}
@@ -267,7 +268,7 @@
 			}
 			.header-contact-box {
 				bottom: 10%;
-				width: 60vh;
+				width: 40vh;
 			}
 		}
 	}

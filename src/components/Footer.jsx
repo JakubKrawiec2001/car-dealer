@@ -1,12 +1,28 @@
 import React from "react";
 import "../styles/Footer.scss";
 import { RiAccountCircleFill } from "react-icons/ri";
-import { AiOutlineHeart } from "react-icons/ai";
 import { BiLogoGmail } from "react-icons/bi";
 import { AiFillPhone } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { signOut } from "firebase/auth";
+import { toast } from "react-toastify";
+import { auth } from "../config/firebase";
+import { HashLink } from "react-router-hash-link";
 
-const Footer = () => {
+const Footer = ({ currentUser, setCurrentUser }) => {
+	const navigate = useNavigate();
+	const logOut = () => {
+		signOut(auth)
+			.then(() => {
+				navigate("/login");
+			})
+			.catch((error) => {
+				console.error(error);
+			});
+
+		setCurrentUser(null);
+		return toast.success("Wylogowano");
+	};
 	return (
 		<footer>
 			<p className="logo">logo</p>
@@ -14,11 +30,24 @@ const Footer = () => {
 			<div className="f-container wrapper">
 				<div className="f-col">
 					<p className="f-col-heading">Zakładki</p>
-					<Link className="f-text">Start</Link>
-					<Link className="f-text">Flota</Link>
-					<Link className="f-text">O nas</Link>
-					<Link className="f-text">Kontakt</Link>
-					<Link className="f-text">Logowanie</Link>
+					<HashLink to="/#" className="f-text">
+						Start
+					</HashLink>
+					<Link to="/allCars" className="f-text">
+						Flota
+					</Link>
+					<a href="tel:123-223-293" className="f-text">
+						Kontakt
+					</a>
+					{!currentUser ? (
+						<Link to="/login" className="f-text">
+							Logowanie
+						</Link>
+					) : (
+						<p onClick={() => logOut()} className="f-text">
+							Wyloguj
+						</p>
+					)}
 				</div>
 				<div className="f-col">
 					<p className="f-col-heading">Oferta</p>
@@ -42,7 +71,6 @@ const Footer = () => {
 					<p className="f-col-heading">Konto</p>
 					<div className="f-icons-box">
 						<RiAccountCircleFill className="f-icon"></RiAccountCircleFill>
-						<AiOutlineHeart className="f-icon"></AiOutlineHeart>
 					</div>
 				</div>
 				<div className="f-col">
@@ -52,14 +80,20 @@ const Footer = () => {
 						skontaktuj się z nami.
 					</p>
 					<div className="f-icons-box">
-						<BiLogoGmail className="f-icon"></BiLogoGmail>
-						<AiFillPhone className="f-icon"></AiFillPhone>
+						<a href="mailto:kubakrawieckk04@gmail.com">
+							<BiLogoGmail className="f-icon"></BiLogoGmail>
+						</a>
+						<a href="tel:123-223-293">
+							<AiFillPhone className="f-icon"></AiFillPhone>
+						</a>
 					</div>
 				</div>
 			</div>
 			<div className="f-line"></div>
 			<p className="copyright">© Copyrights 2023</p>
-			<p className="author">Stworzone przez: <span>Jakub Krawiec</span></p>
+			<p className="author">
+				Stworzone przez: <span>Jakub Krawiec</span>
+			</p>
 		</footer>
 	);
 };

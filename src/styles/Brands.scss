@@ -1,8 +1,7 @@
 @use "../colors" as *;
 .brands {
-	margin-top: 5em;
 	padding: 2em;
-	
+
 	.brands-container {
 		display: flex;
 		justify-content: space-between;
@@ -17,7 +16,6 @@
 @media (min-width: 768px) {
 	.brands {
 		.brands-container {
-			
 			.brand-icon {
 				width: 6.5vh;
 			}
@@ -29,7 +27,7 @@
 	.brands {
 		margin-top: 0;
 		padding: 3em;
-		
+
 		.brands-container {
 			gap: 0;
 			.brand-icon {
@@ -40,16 +38,10 @@
 }
 @media (min-width: 2000px) {
 	.brands {
-		
-
 		.brands-container {
-		
 			.brand-icon {
 				width: 7vh;
 			}
 		}
 	}
 }
-
-
-

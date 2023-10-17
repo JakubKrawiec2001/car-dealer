@@ -99,11 +99,11 @@ function App() {
 			<Routes>
 				<Route
 					path="/"
-					element={<Home currentUser={currentUser} cars={cars}></Home>}></Route>
+					element={<Home currentUser={currentUser} setCurrentUser={setCurrentUser} cars={cars}></Home>}></Route>
 				<Route
 					path="/allCars"
 					element={
-						<AllCars cars={cars} currentUser={currentUser} ></AllCars>
+						<AllCars cars={cars} currentUser={currentUser}></AllCars>
 					}></Route>
 
 				<Route path="/details/:id" element={<Details></Details>}></Route>
@@ -140,16 +140,6 @@ function App() {
 						)
 					}></Route>
 			</Routes>
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
 		</div>
 	);
 }
